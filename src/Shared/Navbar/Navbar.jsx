@@ -12,10 +12,10 @@ const Navbar = () => {
           {/* Left side - Brand */}
           <div className="flex items-center gap-1">
             <span>
-              <VscStarFull size={40} color="#04DA8D" />
+              <VscStarFull size={40} color="#f7b709ff" />
             </span>
 
-            <span className="text-2xl font-bold text-white">Trustpilot</span>
+            <span className="text-2xl font-bold text-white">Trust Builder</span>
           </div>
 
           {/* Center - Navigation Links (Desktop) */}
