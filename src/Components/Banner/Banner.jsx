@@ -2,15 +2,27 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <div className="bg-[#FCFBF3] h-[500px] flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto text-center">
+    <div
+      className="relative h-[400px] md:h-[600px] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
+      style={{
+        backgroundImage:
+          'url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/100 via-black/35 to-black/50"></div>
+
+      {/* Main content */}
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Main Heading */}
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
           Find a company you can trust
         </h1>
 
         {/* Subheading */}
-        <p className="text-xl md:text-2xl text-gray-700 mb-8">
+        <p className=" md:text-2xl text-white mb-8">
           Discover, read, and write reviews
         </p>
 
@@ -20,12 +32,12 @@ const Banner = () => {
             <input
               type="text"
               placeholder="Search company or category"
-              className="w-full px-6 py-4 text-lg border border-gray-300 rounded-full shadow-sm 
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12"
+              className="w-full px-6 py-2 md:py-4 text-lg border border-gray-300 rounded-full shadow-lg 
+                         focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12 bg-white bg-opacity-95"
             />
             <button
               className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-[#04DA8D]
-                               hover:bg-[#0caa70] text-white p-2 rounded-full transition duration-200"
+                               hover:bg-[#0caa70] text-white p-1 md:p-3 rounded-full transition duration-200 shadow-lg"
             >
               <svg
                 className="w-6 h-6"
