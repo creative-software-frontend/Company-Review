@@ -98,8 +98,8 @@ const Navbar = () => {
                   onClick={() => setSearchOpen(!searchOpen)}
                   className={`p-2 rounded-full transition-all duration-300 ${
                     searchOpen
-                      ? 'bg-gray-800 text-[#f7b709] scale-110'
-                      : 'text-white hover:text-[#f7b709] hover:bg-gray-800'
+                      ? 'bg-white text-[#f7b709] scale-110'
+                      : 'text-white hover:text-black hover:bg-white'
                   }`}
                 >
                   <FaSearch size={16} />
@@ -115,7 +115,7 @@ const Navbar = () => {
                 >
                   <form
                     onSubmit={handleSearchSubmit}
-                    className="flex items-center bg-gray-800 rounded-full pl-4 pr-2 py-1 shadow-lg border border-gray-700 min-w-64"
+                    className="flex items-center bg-white rounded-full pl-4 pr-2 py-1 shadow-lg border border-gray-700 min-w-64"
                   >
                     <input
                       ref={searchInputRef}
@@ -123,12 +123,12 @@ const Navbar = () => {
                       value={searchQuery}
                       onChange={e => setSearchQuery(e.target.value)}
                       placeholder="Search reviews..."
-                      className="bg-transparent text-white placeholder-gray-400 focus:outline-none w-full pr-2 transition-all duration-300"
+                      className="bg-transparent text-white placeholder-black focus:outline-none w-full pr-2 transition-all duration-300"
                     />
                     <button
                       type="button"
                       onClick={() => setSearchOpen(false)}
-                      className="p-1 text-gray-400 hover:text-white transition-colors duration-200"
+                      className="p-1  transition-colors duration-200"
                     >
                       <FaTimes size={14} />
                     </button>
