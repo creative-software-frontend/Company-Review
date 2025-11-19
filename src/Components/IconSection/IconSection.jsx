@@ -62,7 +62,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-8">
+    <div className="w-full max-w-7xl mx-auto md:px-0 px-4 py-8">
       {/* Write Review Button */}
       <div className="flex items-center justify-between">
         <div className="flex-1 h-px bg-gray-300" />

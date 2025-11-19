@@ -73,7 +73,13 @@ const Navbar = () => {
                 href="#"
                 className="text-white hover:text-[#f7b709] font-medium transition-colors duration-200"
               >
-                Write a review
+                Pricing
+              </a>
+              <a
+                href="#"
+                className="text-white hover:text-[#f7b709] font-medium transition-colors duration-200"
+              >
+                Racehorse
               </a>
               <a
                 href="#"
