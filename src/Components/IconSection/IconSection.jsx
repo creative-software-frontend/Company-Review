@@ -79,36 +79,37 @@ const HeroSection = () => {
 
       {/* Category Section */}
       <div className="py-12">
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            What are you looking for?
-          </h2>
+        {/* title */}
+        <div className="w-full mb-8 overflow-hidden">
+          <div className="flex items-center justify-between gap-4 flex-nowrap">
+            {/* TITLE — shrink allowed */}
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 truncate">
+              What are you looking for?
+            </h2>
 
-          <div className="flex items-center gap-4">
-            {/* Left / Right Arrows */}
-            <div className="flex gap-2">
+            {/* RIGHT BUTTONS — never shrink */}
+            <div className="flex items-center gap-3 flex-shrink-0">
               <button
                 onClick={scrollLeft}
-                className="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-full hover:bg-gray-100 transition"
+                className="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-full hover:bg-gray-100"
               >
                 <FaChevronLeft className="text-gray-600" />
               </button>
 
               <button
                 onClick={scrollRight}
-                className="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-full hover:bg-gray-100 transition"
+                className="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-full hover:bg-gray-100"
               >
                 <FaChevronRight className="text-gray-600" />
               </button>
-            </div>
 
-            {/* Show More → Navigate */}
-            <button
-              onClick={() => navigate('/categories')}
-              className="px-6 py-2 border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50 rounded-full font-medium transition"
-            >
-              Show More
-            </button>
+              <button
+                onClick={() => navigate('/categories')}
+                className="px-5 py-2 border-2 border-gray-300 rounded-full hover:bg-gray-50 whitespace-nowrap font-medium"
+              >
+                Show More
+              </button>
+            </div>
           </div>
         </div>
 
