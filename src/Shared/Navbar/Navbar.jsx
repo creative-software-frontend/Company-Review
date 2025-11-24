@@ -103,12 +103,6 @@ const Navbar = () => {
                   >
                     Pro Plan
                   </Link>
-                  <Link
-                    to="/pricing/enterprise"
-                    className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-[#f7b709] rounded-b-lg"
-                  >
-                    Enterprise
-                  </Link>
                 </div>
               </div>
 
