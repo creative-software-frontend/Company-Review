@@ -40,7 +40,7 @@ const BestCompany = () => {
       <div>
         <div className="flex items-center justify-between gap-4 flex-nowrap px-2 md:px-0">
           {/* TITLE — shrink allowed */}
-          <h2 className="text-xl sm:text-2xl  font-semibold text-gray-900 truncate">
+          <h2 className="text-xl sm:text-2xl   text-gray-900 truncate">
             Best in Travel Insurance Company
           </h2>
 
@@ -57,7 +57,7 @@ const BestCompany = () => {
         {companies.map(bank => (
           <div
             key={bank.id}
-            className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border border-gray-100"
+            className="bg-white rounded-md shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border border-gray-100"
           >
             <div className=" ">
               <img
@@ -78,6 +78,44 @@ const BestCompany = () => {
             </div>
           </div>
         ))}
+      </div>
+      {/* bottom card */}
+      <div className="flex flex-col lg:flex-row justify-between gap-6 bg-green-200 px-4 md:px-10 py-10 md:py-16 rounded-2xl my-10">
+        {/* left content */}
+        <div className="flex-1 space-y-6 text-center lg:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold">We’re Trustpilot</h2>
+          <p className="text-lg md:text-xl font-medium">
+            We’re a review platform that’s open to everyone. Our vision is to
+            become the universal symbol of trust — by empowering people to shop
+            with confidence, and helping companies improve.
+          </p>
+          <button className="bg-black px-6 py-3 text-white rounded-full text-lg hover:bg-gray-800 transition">
+            What We Do
+          </button>
+        </div>
+
+        {/* right content */}
+        <div className="flex-1 flex flex-col md:flex-row justify-between items-center bg-green-800 rounded-md md:rounded-2xl p-6 md:p-8 text-white gap-6">
+          <div className="flex-1 space-y-4 text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold">
+              Our new Trust Report has landed!
+            </h2>
+            <p className="text-md md:text-lg">
+              Find out which actions we’ve taken to protect you and promote
+              trust on our platform.
+            </p>
+            <button className="border border-white px-4 py-2 rounded-2xl hover:bg-white hover:text-green-800 transition">
+              Take a look
+            </button>
+          </div>
+          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white flex-shrink-0">
+            <img
+              className="w-full h-full object-cover"
+              src="https://mir-s3-cdn-cf.behance.net/projects/808/9be656199017475.Y3JvcCwxNjE2LDEyNjQsMCww.jpg"
+              alt="Profile"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

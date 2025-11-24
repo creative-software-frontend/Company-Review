@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { VscStarFull } from 'react-icons/vsc';
 import { FaSearch, FaTimes } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,57 +43,93 @@ const Navbar = () => {
     if (searchQuery.trim()) console.log('Searching for:', searchQuery);
   };
 
+  const navLinks = [
+    { label: 'Pricing', to: '/pricing' },
+    { label: 'Resource', to: '/resource' },
+    { label: 'Solutions', to: '/solutions' },
+    { label: 'Categories', to: '/categories' },
+    { label: 'Blog', to: '/blog' },
+  ];
+
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 md:py-2 ${
-          scrolled
-            ? 'bg-[#1B1A1B] shadow-lg border-b border-gray-800'
-            : 'bg-[#1B1A1B]/95 backdrop-blur-sm border-b border-gray-800/50'
-        }`}
+        className={`top-0 sticky z-50 transition-all duration-300 md:py-2 bg-[#1B1A1B]/100 backdrop-blur-sm border-b border-gray-800`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-0">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center gap-3 group cursor-pointer">
-              <div className="relative">
-                <VscStarFull
-                  size={32}
-                  className="text-[#f7b709] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
-                />
-                <div className="absolute inset-0 bg-[#f7b709] rounded-full blur-sm opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+            <Link to={'/'}>
+              <div className="flex items-center gap-3 group cursor-pointer">
+                <div className="relative">
+                  <VscStarFull
+                    size={32}
+                    className="text-[#f7b709] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+                  />
+                  <div className="absolute inset-0 bg-[#f7b709] rounded-full blur-sm opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                </div>
+                <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  Trust Builder
+                </span>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Trust Builder
-              </span>
-            </div>
+            </Link>
 
             {/* Desktop Links */}
             <div className="hidden lg:flex items-center space-x-8">
-              <a
-                href="#"
-                className="text-white hover:text-[#f7b709] font-medium transition-colors duration-200"
-              >
-                Pricing
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#f7b709] font-medium transition-colors duration-200"
-              >
-                Racehorse
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#f7b709] font-medium transition-colors duration-200"
-              >
-                Categories
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#f7b709] font-medium transition-colors duration-200"
-              >
-                Blog
-              </a>
+              {/* Pricing Dropdown */}
+              <div className="relative group">
+                <button className="font-medium text-white hover:text-[#f7b709] transition-colors duration-200 flex items-center gap-1">
+                  Pricing
+                  <span className="mt-1">▾</span>
+                </button>
+
+                {/* Dropdown Menu */}
+                <div className="absolute left-0 mt-2 w-48 bg-[#1f1f1f] border border-gray-700 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <Link
+                    to="/pricing/free"
+                    className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-[#f7b709] rounded-t-lg"
+                  >
+                    Free Plan
+                  </Link>
+                  <Link
+                    to="/pricing/basic"
+                    className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-[#f7b709] rounded-t-lg"
+                  >
+                    Basic Plan
+                  </Link>
+                  <Link
+                    to="/pricing/pro"
+                    className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-[#f7b709]"
+                  >
+                    Pro Plan
+                  </Link>
+                  <Link
+                    to="/pricing/enterprise"
+                    className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-[#f7b709] rounded-b-lg"
+                  >
+                    Enterprise
+                  </Link>
+                </div>
+              </div>
+
+              {/* Other navLinks */}
+              {navLinks
+                .filter(link => link.label !== 'Pricing') // Pricing বাদ দিয়ে বাকি লিঙ্ক দেখানো
+                .map(link => (
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    className={({ isActive }) =>
+                      `font-medium transition-colors duration-200 ${
+                        isActive
+                          ? 'text-[#f7b709]'
+                          : 'text-white hover:text-[#f7b709]'
+                      }`
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+                ))}
             </div>
 
             {/* Desktop Right */}

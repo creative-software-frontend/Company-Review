@@ -61,7 +61,7 @@ const BankSection = () => {
         {banks.map(bank => (
           <div
             key={bank.id}
-            className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border border-gray-100"
+            className="bg-white rounded-md shadow-md p-6 hover:shadow-lg transition-shadow duration-300 border border-gray-100"
           >
             <div className="flex flex-col items-center ">
               <img

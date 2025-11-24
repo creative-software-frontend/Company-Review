@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#1B1A1B] text-white border-t border-gray-800">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-0 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -130,8 +130,6 @@ const Footer = () => {
                 'Contact Support',
                 'Help Center',
                 'Privacy Policy',
-                'Terms of Service',
-                'Cookie Policy',
               ].map((item, index) => (
                 <li key={index}>
                   <a

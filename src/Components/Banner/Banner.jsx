@@ -32,15 +32,17 @@ const Banner = () => {
             <input
               type="text"
               placeholder="Search company or category"
-              className="w-full px-6 py-2 md:py-4 text-lg border border-gray-300 rounded-full shadow-lg 
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12 bg-white bg-opacity-95"
+              className="w-full px-6 py-4 text-lg border border-gray-300 rounded-full 
+                     focus:outline-none focus:ring-2 focus:ring-[#04DA8D] focus:border-[#04DA8D]
+                     pr-14 bg-white shadow-lg hover:shadow-xl transition-all duration-300
+                     placeholder-gray-500"
             />
             <button
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-[#04DA8D]
-                               hover:bg-[#0caa70] text-white p-1 md:p-3 rounded-full transition duration-200 shadow-lg"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 
+                     text-[#04DA8D] hover:text-[#0caa70] p-2 transition duration-200 border-l-2 "
             >
               <svg
-                className="w-6 h-6"
+                className="w-7 h-7"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

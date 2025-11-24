@@ -121,7 +121,7 @@ const HeroSection = () => {
           {categories.map((category, index) => (
             <button
               key={index}
-              className="min-w-[150px] flex flex-col items-center p-4 bg-white rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
+              className="min-w-[150px] flex flex-col items-center p-4 bg-white rounded-md border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
             >
               <div className="w-16 h-16 flex items-center justify-center bg-gray-50 rounded-2xl mb-3 group-hover:bg-blue-50 transition">
                 <category.icon
