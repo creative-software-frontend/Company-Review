@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { VscStarFull } from 'react-icons/vsc';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
+import Pricing from './Pricing';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,37 +79,17 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center space-x-8">
               {/* Pricing Dropdown */}
               <div className="relative group">
-                <button className="font-medium text-white hover:text-[#f7b709] transition-colors duration-200 flex items-center gap-1">
-                  Pricing
-                  <span className="mt-1">▾</span>
-                </button>
-
-                {/* Dropdown Menu */}
-                <div className="absolute left-0 mt-2 w-48 bg-[#1f1f1f] border border-gray-700 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                  <Link
-                    to="/pricing/free"
-                    className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-[#f7b709] rounded-t-lg"
-                  >
-                    Free Plan
-                  </Link>
-                  <Link
-                    to="/pricing/basic"
-                    className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-[#f7b709] rounded-t-lg"
-                  >
-                    Basic Plan
-                  </Link>
-                  <Link
-                    to="/pricing/pro"
-                    className="block px-4 py-3 text-white hover:bg-gray-700 hover:text-[#f7b709]"
-                  >
-                    Pro Plan
-                  </Link>
-                </div>
+                <Link to={'/pricing'}>
+                  <button className="font-medium text-white hover:text-[#f7b709] transition-colors duration-200 flex items-center gap-1">
+                    Pricing
+                    <span className="mt-1">▾</span>
+                  </button>
+                </Link>
               </div>
 
               {/* Other navLinks */}
               {navLinks
-                .filter(link => link.label !== 'Pricing') // Pricing বাদ দিয়ে বাকি লিঙ্ক দেখানো
+                .filter(link => link.label !== 'Pricing')
                 .map(link => (
                   <NavLink
                     key={link.to}

@@ -7,6 +7,7 @@ import ProPlan from '../Pages/ProPlan/ProPlan';
 import Blog from '../Pages/Blog/Blog';
 import Categories from '../Pages/Categories/Categories';
 import Solutions from '../Pages/Solutions/Solutions';
+import Pricing from '../Shared/Navbar/Pricing';
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
       {
         path: '/solutions',
         Component: Solutions,
+      },
+      {
+        path: '/pricing',
+        Component: Pricing,
       },
     ],
   },
