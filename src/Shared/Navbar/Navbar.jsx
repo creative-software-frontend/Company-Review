@@ -76,7 +76,11 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Links */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div
+              className={`hidden lg:flex items-center space-x-8 transition-all duration-300 ${
+                searchOpen ? 'mr-32' : 'mr-0'
+              }`}
+            >
               {/* Pricing Dropdown */}
               <div className="relative group">
                 <Link to={'/pricing'}>

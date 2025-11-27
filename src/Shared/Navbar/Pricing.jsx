@@ -45,14 +45,14 @@ const Pricing = () => {
       </p>
 
       {/* Plan Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl">
+      <div className="grid grid-cols-2 px-2 md:px-0 lg:grid-cols-4 gap-4 w-full max-w-7xl">
         {plans.map((plan, index) => {
           const Icon = plan.icon;
           return (
             <Link
               key={index}
               to={plan.link}
-              className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow border border-transparent hover:border-gray-200 cursor-pointer"
+              className="bg-white rounded-md shadow-md p-6 hover:shadow-md  hover:border-gray-200 cursor-pointer"
             >
               <div className="flex items-center mb-4">
                 <div className="bg-orange-100 p-3 rounded-full mr-4">

@@ -8,6 +8,7 @@ import Blog from '../Pages/Blog/Blog';
 import Categories from '../Pages/Categories/Categories';
 import Solutions from '../Pages/Solutions/Solutions';
 import Pricing from '../Shared/Navbar/Pricing';
+import Resource from '../Pages/Resource/Resource';
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: '/pricing',
         Component: Pricing,
+      },
+      {
+        path: '/resource',
+        Component: Resource,
       },
     ],
   },
