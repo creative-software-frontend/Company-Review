@@ -7,8 +7,7 @@ import ProPlan from '../Pages/ProPlan/ProPlan';
 import Blog from '../Pages/Blog/Blog';
 import Categories from '../Pages/Categories/Categories';
 import Solutions from '../Pages/Solutions/Solutions';
-import Pricing from '../Shared/Navbar/Pricing';
-import Resource from '../Pages/Resource/Resource';
+
 import CustomerStories from '../Pages/CustomerStories/CustomerStories';
 import GuidesReports from '../Pages/GuidesReports/GuidesReports';
 
@@ -45,14 +44,7 @@ export const router = createBrowserRouter([
         path: '/solutions',
         Component: Solutions,
       },
-      {
-        path: '/pricing',
-        Component: Pricing,
-      },
-      {
-        path: '/resource',
-        Component: Resource,
-      },
+
       {
         path: '/customer-stories',
         Component: CustomerStories,

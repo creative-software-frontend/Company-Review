@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Megaphone, Star, Heart, FileText } from 'lucide-react';
 
-const Pricing = () => {
+const Pricing = ({ setShowPricing }) => {
   const plans = [
     {
       icon: Megaphone,
@@ -35,7 +35,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 flex flex-col items-center py-12">
+    <div className="w-full fixed top-16 left-0 z-20 bg-white h-[800px] border-gray-700 py-10 px-8 shadow-xl animate-fadeIn  flex flex-col items-center">
       <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
         Choose Your Plan
       </h2>
@@ -50,6 +50,7 @@ const Pricing = () => {
           const Icon = plan.icon;
           return (
             <Link
+              onClick={() => setShowPricing(false)}
               key={index}
               to={plan.link}
               className="bg-white rounded-md shadow-md p-6 hover:shadow-md  hover:border-gray-200 cursor-pointer"

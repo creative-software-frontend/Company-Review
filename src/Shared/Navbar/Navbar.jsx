@@ -3,21 +3,26 @@ import { VscStarFull } from 'react-icons/vsc';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import Pricing from './Pricing';
+import Resource from './Resource';
+import Solutions from './Solutions';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
+  const [showPricing, setShowPricing] = useState(false);
+  const [showResource, setShowResource] = useState(false);
+  const [showSolutions, setShowSolutions] = useState(false);
   const searchRef = useRef(null);
   const searchInputRef = useRef(null);
 
   // Scroll effect
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => setScrolled(window.scrollY > 10);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   // Close search when clicking outside
   useEffect(() => {
@@ -81,21 +86,87 @@ const Navbar = () => {
                 searchOpen ? 'mr-32' : 'mr-0'
               }`}
             >
-              {/* Pricing Dropdown */}
-              <div className="relative group">
-                <Link to={'/pricing'}>
-                  <button className="font-medium text-white hover:text-[#f7b709] transition-colors duration-200 flex items-center gap-1">
+              {/* Dropdown Container */}
+              <div className="flex items-center gap-6">
+                {/* Pricing Dropdown */}
+                <div className="relative group">
+                  <button
+                    onClick={() => {
+                      setShowResource(false);
+                      setShowSolutions(false);
+                      setShowPricing(!showPricing);
+                    }}
+                    className="font-medium text-white hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/5"
+                  >
                     Pricing
-                    <span className="mt-1">▾</span>
+                    <span
+                      className={`transform transition-transform duration-300 ${
+                        showPricing ? 'rotate-180' : ''
+                      }`}
+                    >
+                      ^
+                    </span>
                   </button>
-                </Link>
+                </div>
+
+                {/* Resource Dropdown */}
+                <div className="relative group">
+                  <button
+                    onClick={() => {
+                      setShowPricing(false);
+                      setShowSolutions(false);
+                      setShowResource(!showResource);
+                    }}
+                    className="font-medium text-white hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/5"
+                  >
+                    Resource
+                    <span
+                      className={`transform transition-transform duration-300 ${
+                        showResource ? 'rotate-180' : ''
+                      }`}
+                    >
+                      ^
+                    </span>
+                  </button>
+                </div>
+
+                {/* Solutions Dropdown */}
+                <div className="relative group">
+                  <button
+                    onClick={() => {
+                      setShowPricing(false);
+                      setShowResource(false);
+                      setShowSolutions(!showSolutions);
+                    }}
+                    className="font-medium text-white hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/5"
+                  >
+                    Solutions
+                    <span
+                      className={`transform transition-transform duration-300 ${
+                        showSolutions ? 'rotate-180' : ''
+                      }`}
+                    >
+                      ^
+                    </span>
+                  </button>
+                </div>
               </div>
 
               {/* Other navLinks */}
               {navLinks
-                .filter(link => link.label !== 'Pricing')
+                .filter(
+                  link =>
+                    link.label !== 'Pricing' &&
+                    link.label !== 'Resource' &&
+                    link.label !== 'Solutions'
+                )
                 .map(link => (
                   <NavLink
+                    onClick={() => {
+                      setShowResource(false);
+                      setShowPricing(false);
+                      setShowSolutions(false);
+                    }}
                     key={link.to}
                     to={link.to}
                     className={({ isActive }) =>
@@ -308,6 +379,14 @@ const Navbar = () => {
           className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-20 transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
         />
+      )}
+      {/* ▼ Pricing Dropdown Section Below Navbar (Outside <nav>) */}
+      {showPricing && <Pricing setShowPricing={setShowPricing}></Pricing>}
+      {/* ▼ Resource Dropdown Section Below Navbar (Outside <nav>) */}
+      {showResource && <Resource setShowResource={setShowResource}></Resource>}
+      {/* ▼ Solutions Dropdown Section Below Navbar (Outside <nav>) */}
+      {showSolutions && (
+        <Solutions setShowSolutions={setShowSolutions}></Solutions>
       )}
     </>
   );

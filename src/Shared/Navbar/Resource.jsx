@@ -11,7 +11,7 @@ import {
   Puzzle,
 } from 'lucide-react';
 
-const Resource = () => {
+const Resource = ({ setShowResource, setShowSolutions }) => {
   const resources = [
     { to: '/blog', title: 'Blog', icon: BookOpen, color: 'bg-blue-500' },
     {
@@ -53,19 +53,8 @@ const Resource = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      {/* Back to Home */}
-      <div className="max-w-7xl mx-auto mb-10">
-        <Link
-          to="/"
-          className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
-        >
-          <ArrowLeft className="w-5 h-5 mr-2" />
-          Back to Home
-        </Link>
-      </div>
-
-      <div className="max-w-7xl mx-auto">
+    <div className="w-full fixed top-16 left-0 z-20 bg-white h-[800px] border-gray-700 py-10 shadow-xl animate-fadeIn flex flex-col items-center">
+      <div className="w-full max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
@@ -77,19 +66,23 @@ const Resource = () => {
           </p>
         </div>
 
-        {/* Resource Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
+        {/* Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {resources.map(resource => {
             const Icon = resource.icon;
             return (
               <Link
+                onClick={() => {
+                  setShowResource(false);
+                  setShowSolutions(false);
+                }}
                 key={resource.title}
                 to={resource.to}
-                className="group relative bg-white rounded-md  shadow-md overflow-hidden border border-gray-100"
+                className="group relative bg-white rounded-md shadow-md overflow-hidden border border-gray-100"
               >
                 <div className="p-8 text-center">
                   <div
-                    className={`${resource.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5   `}
+                    className={`${resource.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5`}
                   >
                     <Icon className="w-8 h-8 text-white" />
                   </div>
@@ -100,25 +93,9 @@ const Resource = () => {
                     Learn more →
                   </p>
                 </div>
-
-                {/* Subtle gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </Link>
             );
           })}
-        </div>
-
-        {/* Optional Footer CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-600">
-            Can't find what you're looking for?{' '}
-            <Link
-              to="/contact"
-              className="text-blue-600 font-medium hover:underline"
-            >
-              Contact our support team
-            </Link>
-          </p>
         </div>
       </div>
     </div>
