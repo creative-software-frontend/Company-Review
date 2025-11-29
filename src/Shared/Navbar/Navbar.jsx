@@ -83,7 +83,7 @@ const Navbar = () => {
             {/* Desktop Links */}
             <div
               className={`hidden lg:flex items-center space-x-8 transition-all duration-300 ${
-                searchOpen ? 'mr-32' : 'mr-0'
+                searchOpen ? 'mr-44' : 'mr-0'
               }`}
             >
               {/* Dropdown Container */}
