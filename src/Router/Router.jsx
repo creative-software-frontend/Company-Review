@@ -10,6 +10,8 @@ import Solutions from '../Pages/Solutions/Solutions';
 
 import CustomerStories from '../Pages/CustomerStories/CustomerStories';
 import GuidesReports from '../Pages/GuidesReports/GuidesReports';
+import InviteReviews from '../Pages/InviteReviews/InviteReviews';
+import EngageFeedback from '../Pages/EngageFeedback/EngageFeedback';
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +54,14 @@ export const router = createBrowserRouter([
       {
         path: '/guides-reports',
         Component: GuidesReports,
+      },
+      {
+        path: '/invite-reviews',
+        Component: InviteReviews,
+      },
+      {
+        path: '/engage-feedback',
+        Component: EngageFeedback,
       },
     ],
   },

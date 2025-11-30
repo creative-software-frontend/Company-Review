@@ -35,7 +35,7 @@ const Pricing = ({ setShowPricing }) => {
   ];
 
   return (
-    <div className="w-full fixed top-16 left-0 z-20 bg-white h-[800px] border-gray-700 py-10 px-8 shadow-xl animate-fadeIn  flex flex-col items-center">
+    <div className="w-full fixed top-16 left-0 z-20 bg-white  border-gray-700 py-10 px-8 shadow-xl animate-fadeIn  flex flex-col items-center">
       <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
         Choose Your Plan
       </h2>
