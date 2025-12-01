@@ -2,6 +2,7 @@ import React from 'react';
 import { FaStar, FaArrowRight } from 'react-icons/fa';
 
 export default function FreePlan() {
+
   return (
     <div className="min-h-screen bg-white flex flex-col lg:flex-row items-center justify-center px-8 py-16 gap-16 max-w-7xl mx-auto">
       {/* Left Side */}

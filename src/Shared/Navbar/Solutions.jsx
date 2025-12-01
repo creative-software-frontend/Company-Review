@@ -14,8 +14,8 @@ import {
 
 const Solutions = ({ setShowSolutions }) => {
   return (
-    <div className="w-full fixed top-16 left-0 z-20 bg-white  border-gray-700 py-10 px-8 shadow-xl animate-fadeIn  flex flex-col items-center">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="mx-auto fixed top-16 left-0 right-0 z-20    animate-fadeIn flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6  pt-5 bg-white">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">
@@ -27,13 +27,13 @@ const Solutions = ({ setShowSolutions }) => {
         </div>
 
         {/* By Business Goal Section */}
-        <div className="mb-16">
+        <div className="mb-16  bg-white">
           <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-3">
             <Sparkles className="w-6 h-6 text-orange-500" />
             By business goal
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: MessageCircle,
@@ -53,12 +53,12 @@ const Solutions = ({ setShowSolutions }) => {
                 desc: 'Turn reviews into more sales',
                 to: '/accelerate-conversions',
               },
-              // {
-              //   icon: BarChart3,
-              //   title: 'Improve with insights',
-              //   desc: 'Analyze sentiment and trends',
-              //   to: '/insights',
-              // },
+              {
+                icon: BarChart3,
+                title: 'Improve with insights',
+                desc: 'Analyze sentiment and trends',
+                to: '/insights',
+              },
               // {
               //   icon: TrendingUp,
               //   title: 'Drive revenue growth',

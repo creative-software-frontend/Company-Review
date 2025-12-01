@@ -11,6 +11,7 @@ const Home = () => {
       <IconSection></IconSection>
       <BankSection></BankSection>
       <BestCompany></BestCompany>
+     
     </>
   );
 };

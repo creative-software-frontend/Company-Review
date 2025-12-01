@@ -12,6 +12,8 @@ import CustomerStories from '../Pages/CustomerStories/CustomerStories';
 import GuidesReports from '../Pages/GuidesReports/GuidesReports';
 import InviteReviews from '../Pages/InviteReviews/InviteReviews';
 import EngageFeedback from '../Pages/EngageFeedback/EngageFeedback';
+import { AccelerateConversions } from '../Pages/AccelerateConversions/AccelerateConversions';
+import { Insights } from '../Pages/Insights/Insights';
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +64,14 @@ export const router = createBrowserRouter([
       {
         path: '/engage-feedback',
         Component: EngageFeedback,
+      },
+      {
+        path: '/accelerate-conversions',
+        Component: AccelerateConversions,
+      },
+      {
+        path: '/insights',
+        Component: Insights,
       },
     ],
   },

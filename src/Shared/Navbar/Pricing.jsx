@@ -35,17 +35,19 @@ const Pricing = ({ setShowPricing }) => {
   ];
 
   return (
-    <div className="w-full fixed top-16 left-0 z-20 bg-white  border-gray-700 py-10 px-8 shadow-xl animate-fadeIn  flex flex-col items-center">
-      <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+    <div className="mx-auto fixed top-16 left-0 right-0 z-20    animate-fadeIn flex flex-col items-center">
+   
+      <div className="w-full max-w-7xl bg-white text-center pt-10">
+         <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
         Choose Your Plan
       </h2>
-      <p className="text-gray-600 text-center mb-12 max-w-2xl">
+      <p className="text-gray-600 text-center mb-12 ">
         Select a plan that suits your business needs. Upgrade anytime as your
         business grows.
       </p>
-
+</div>
       {/* Plan Grid */}
-      <div className="grid grid-cols-2 px-2 md:px-0 lg:grid-cols-4 gap-4 w-full max-w-7xl">
+      <div className="grid grid-cols-2 px-2 md:px-0 lg:grid-cols-4 gap-4 w-full max-w-7xl bg-white pb-5 ">
         {plans.map((plan, index) => {
           const Icon = plan.icon;
           return (
@@ -53,7 +55,7 @@ const Pricing = ({ setShowPricing }) => {
               onClick={() => setShowPricing(false)}
               key={index}
               to={plan.link}
-              className="bg-white rounded-md shadow-md p-6 hover:shadow-md  hover:border-gray-200 cursor-pointer"
+              className="bg-white rounded-md shadow-md p-6 hover:shadow-md  hover:border-gray-200 cursor-pointer "
             >
               <div className="flex items-center mb-4">
                 <div className="bg-orange-100 p-3 rounded-full mr-4">
