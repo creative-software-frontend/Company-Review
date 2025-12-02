@@ -244,9 +244,10 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <button className="text-white hover:text-[#f7b709] font-medium transition-colors duration-200">
+              <Link to={'/user-auth'}>
+                <button className="text-white hover:text-[#f7b709] font-medium transition-colors duration-200">
                 Login
-              </button>
+              </button></Link>
               <button className="px-6 py-2.5 bg-gradient-to-r from-[#9CC6FF] to-[#7AB2FF] hover:from-[#8BBBFF] hover:to-[#69A5FF] font-medium rounded-full transition-all duration-200 transform hover:scale-105">
                 For Business
               </button>
@@ -365,13 +366,16 @@ const Navbar = () => {
             Blog
           </a>
           <div className="border-t border-gray-700 pt-3 mt-2">
-            <a
+            <NavLink to={'/user-auth'} className="block px-4 py-3 text-white hover:text-[#f7b709] font-medium rounded-lg hover:bg-gray-700/50 transition-all duration-200 mb-2"
+              onClick={() => setIsOpen(false)}>
+              Login
+            </NavLink>
+            {/* <a
               href="#"
-              className="block px-4 py-3 text-white hover:text-[#f7b709] font-medium rounded-lg hover:bg-gray-700/50 transition-all duration-200 mb-2"
-              onClick={() => setIsOpen(false)}
+             
             >
               Login
-            </a>
+            </a> */}
             <button
               className="w-full px-4 py-3 bg-gradient-to-r from-[#9CC6FF] to-[#7AB2FF] hover:from-[#8BBBFF] hover:to-[#69A5FF] font-medium rounded-lg transition-all duration-200 transform hover:scale-[1.02] text-left"
               onClick={() => setIsOpen(false)}

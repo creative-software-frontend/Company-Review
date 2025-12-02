@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter } from 'react-router-dom';
 import Root from '../Layout/Root/Root';
 import Home from '../Pages/Home/Home';
 import BasicPlan from '../Pages/BasicPlan/BasicPlan';
@@ -14,8 +14,12 @@ import InviteReviews from '../Pages/InviteReviews/InviteReviews';
 import EngageFeedback from '../Pages/EngageFeedback/EngageFeedback';
 import { AccelerateConversions } from '../Pages/AccelerateConversions/AccelerateConversions';
 import { Insights } from '../Pages/Insights/Insights';
+import { Userlogin } from '../Pages/LoginRegister/Userlogin/Userlogin';
+import { UserRegister } from '../Pages/LoginRegister/UserRegister/UserRegister';
+import AuthLayout from '../Layout/AuthLayout';
 
 export const router = createBrowserRouter([
+  // public layout
   {
     path: '/',
     Component: Root,
@@ -75,4 +79,19 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  // login layout
+  {
+    path: '/user-auth',
+    Component:AuthLayout,
+    children: [
+      {
+        index: true,
+        Component:Userlogin
+      },
+      {
+        path: 'register',
+        Component:UserRegister
+      }
+    ]
+  }
 ]);
