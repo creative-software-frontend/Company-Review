@@ -88,11 +88,11 @@ export const router = createBrowserRouter([
         index: true,
         Component: Userlogin,
       },
-      // fix here
-      // {
-      //   path: 'register',
-      //   Component:UserRegister
-      // }
+
+      {
+        path: 'register',
+        Component: UserRegister,
+      },
     ],
   },
 ]);
