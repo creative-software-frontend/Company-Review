@@ -82,16 +82,16 @@ export const router = createBrowserRouter([
   // login layout
   {
     path: '/user-auth',
-    Component:AuthLayout,
+    Component: AuthLayout,
     children: [
       {
         index: true,
-        Component:Userlogin
+        Component: Userlogin,
       },
-      {
-        path: 'register',
-        Component:UserRegister
-      }
-    ]
-  }
+      // {
+      //   path: 'register',
+      //   Component:UserRegister
+      // }
+    ],
+  },
 ]);

@@ -82,41 +82,41 @@ const Navbar = () => {
 
             {/* Desktop Links */}
             <div
-              className={`hidden lg:flex items-center space-x-8 transition-all duration-300 ${
-                searchOpen ? 'mr-44' : 'mr-0'
+              className={`hidden lg:flex items-center gap-6 transition-all duration-300 ${
+                searchOpen ? 'mr-48' : 'mr-0'
               }`}
             >
               {/* Dropdown Container */}
-              <div className="flex items-center gap-6">
-              {/* Pricing Dropdown */}
-<div className="relative group">
-  <button
-    onClick={() => {
-      setShowResource(false);
-      setShowSolutions(false);
-      setShowPricing(!showPricing);
-    }}
-    className="font-medium text-white hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/5"
-  >
-    Pricing
-    <svg
-      className={`w-4 h-4 text-yellow-400 transition-transform duration-300 ${
-        showPricing ? 'rotate-180' : ''
-      }`}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="3"
-        d="M19 9l-7 7-7-7"
-      />
-    </svg>
-  </button>
-</div>
+              <div className="flex items-center ">
+                {/* Pricing Dropdown */}
+                <div className="relative group">
+                  <button
+                    onClick={() => {
+                      setShowResource(false);
+                      setShowSolutions(false);
+                      setShowPricing(!showPricing);
+                    }}
+                    className="font-medium text-white hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/5"
+                  >
+                    Pricing
+                    <svg
+                      className={`w-4 h-4 text-yellow-400 transition-transform duration-300 ${
+                        showPricing ? 'rotate-180' : ''
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="3"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                </div>
 
                 {/* Resource Dropdown */}
                 <div className="relative group">
@@ -129,13 +129,22 @@ const Navbar = () => {
                     className="font-medium text-white hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/5"
                   >
                     Resource
-                    <span
-                      className={`transform transition-transform duration-300 ${
+                    <svg
+                      className={`w-4 h-4 text-yellow-400 transition-transform duration-300 ${
                         showResource ? 'rotate-180' : ''
                       }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      ^
-                    </span>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="3"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
                   </button>
                 </div>
 
@@ -150,13 +159,22 @@ const Navbar = () => {
                     className="font-medium text-white hover:text-yellow-400 transition-all duration-300 flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/5"
                   >
                     Solutions
-                    <span
-                      className={`transform transition-transform duration-300 ${
+                    <svg
+                      className={`w-4 h-4 text-yellow-400 transition-transform duration-300 ${
                         showSolutions ? 'rotate-180' : ''
                       }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      ^
-                    </span>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="3"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -246,8 +264,9 @@ const Navbar = () => {
 
               <Link to={'/user-auth'}>
                 <button className="text-white hover:text-[#f7b709] font-medium transition-colors duration-200">
-                Login
-              </button></Link>
+                  Login
+                </button>
+              </Link>
               <button className="px-6 py-2.5 bg-gradient-to-r from-[#9CC6FF] to-[#7AB2FF] hover:from-[#8BBBFF] hover:to-[#69A5FF] font-medium rounded-full transition-all duration-200 transform hover:scale-105">
                 For Business
               </button>
@@ -366,8 +385,11 @@ const Navbar = () => {
             Blog
           </a>
           <div className="border-t border-gray-700 pt-3 mt-2">
-            <NavLink to={'/user-auth'} className="block px-4 py-3 text-white hover:text-[#f7b709] font-medium rounded-lg hover:bg-gray-700/50 transition-all duration-200 mb-2"
-              onClick={() => setIsOpen(false)}>
+            <NavLink
+              to={'/user-auth'}
+              className="block px-4 py-3 text-white hover:text-[#f7b709] font-medium rounded-lg hover:bg-gray-700/50 transition-all duration-200 mb-2"
+              onClick={() => setIsOpen(false)}
+            >
               Login
             </NavLink>
             {/* <a
