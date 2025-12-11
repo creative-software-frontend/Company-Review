@@ -88,6 +88,7 @@ export const router = createBrowserRouter([
         index: true,
         Component: Userlogin,
       },
+      // fix here
       // {
       //   path: 'register',
       //   Component:UserRegister
